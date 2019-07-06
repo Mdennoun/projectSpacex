@@ -21,7 +21,7 @@ export class MenuPage implements OnInit {
       activated: true
     },
     {
-      title: 'List',
+      title: 'Rockets',
       url: '/menu/list',
       activated: true
     }
