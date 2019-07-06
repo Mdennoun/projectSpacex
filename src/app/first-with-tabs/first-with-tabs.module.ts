@@ -5,27 +5,27 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPage } from './menu.page';
+import { FirstWithTabsPage } from './first-with-tabs.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MenuPage,
+    path: 'tabs',
+    component: FirstWithTabsPage,
     children: [
       {
-        path: 'home',
-        loadChildren: '../home/home.module#HomePageModule'
-
+        path: 'tab1',
+        loadChildren: '../tab1/tab1.module#Tab1PageModule'
       },
       {
-        path: 'first',
-        loadChildren: '../first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule'
-      },
-      {
-        path: 'list',
-        loadChildren: '../list/list.module#ListPageModule'
+        path: 'tab2',
+        loadChildren: '../tab2/tab2.module#Tab2PageModule'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'tabs/tab1',
+    pathMatch: 'full'
   }
 ];
 
@@ -36,6 +36,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MenuPage]
+  declarations: [FirstWithTabsPage]
 })
-export class MenuPageModule { }
+export class FirstWithTabsPageModule {}

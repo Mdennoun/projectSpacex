@@ -4,29 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-
-import { MenuPage } from './menu.page';
+import { Tab2Page } from './tab2.page';
+import { ComponentsModule } from '../modules/components/components.modules';
 
 const routes: Routes = [
   {
     path: '',
-    component: MenuPage,
+    component: Tab2Page,
     children: [
       {
-        path: 'home',
-        loadChildren: '../home/home.module#HomePageModule'
-
-      },
-      {
-        path: 'first',
-        loadChildren: '../first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule'
-      },
-      {
-        path: 'list',
-        loadChildren: '../list/list.module#ListPageModule'
+        path: 'second/details',
+        loadChildren: '../details/details.module#DetailsPageModule'
       }
     ]
-  }
+  },
 ];
 
 @NgModule({
@@ -34,8 +25,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MenuPage]
+  declarations: [Tab2Page]
 })
-export class MenuPageModule { }
+export class Tab2PageModule {}

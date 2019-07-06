@@ -10,7 +10,12 @@ import { NgProgress } from '@ngx-progressbar/core';
 export class MenuPage implements OnInit {
   selectedPath: string;
   pages = [
-        {
+    {
+      title: 'Launches',
+      url: '/menu/first',
+      activated: true
+    },
+    {
       title: 'Home',
       url: '/menu/home',
       activated: true
